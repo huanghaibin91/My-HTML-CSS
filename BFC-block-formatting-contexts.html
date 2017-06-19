@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>块级格式化上下文</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style type="text/css">
+            .demo1 {
+                width: 300px;
+                height: 300px;
+                background: #ccc;
+            }
+            .demo1 div {
+                width: 50px;
+                height: 50px;
+                margin: 50px auto;
+                background: red;
+            }
+
+            .demo2 {
+                width: 300px;
+            }
+            .demo2 div {
+                background: #eee;
+                border: 1px solid blue;
+                
+            }
+            .demo2 div div {
+                width: 50px;
+                height: 50px;
+                background: red;
+            }
+            .demo2 .demo2-1 div {
+                float: right;
+            }
+            .demo2 .demo2-1 {
+                overflow: hidden;
+            }
+            .demo2 .demo2-2 div {
+                float: right;
+            }
+
+            .demo3 {
+                width: 300px;
+                background: #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <p>同一个BFC（块级格式化上下文）下外边距会发生折叠</p>
+        <div class="demo1">
+            <p>两个div的下外边距相距50，而不是100，下外边距重叠</p>
+            <div></div>
+            <div></div>
+        </div>
+        <p>BFC可以包含浮动的元素（清除浮动）</p>
+        <div class="demo2">
+            <p>清除掉浮动，容器包裹元素</p>
+            <div class="demo2-1">
+                <div>浮动元素</div>
+            </div>
+            <p>未清除浮动，元素浮动脱离文档流，父元素只剩下边框的尺寸</p>
+            <div class="demo2-2">
+                <div>浮动元素</div>
+            </div>
+        </div>
+        <div class="demo3">
+            <p>文字环绕</p>
+            <div class="demo3-1">
+                <div style="height: 50px; width: 50px; float: left; background: red;">浮动元素</div>
+                <div>这是一个没有设置浮动，也没有触发BFC的元素.这是一个没有设置浮动，也没有触发BFC的元素.这是一个没有设置浮动，也没有触发BFC的元素.这是一个没有设置浮动，也没有触发BFC的元素</div>
+            </div>
+            <p>文字不围绕浮动元素，这个方法可以用来实现两列自适应布局，左边的宽度固定，右边的内容自适应宽度（去掉上面右边内容的宽度）</p>
+            <div class="demo3-2">
+                <div style="height: 50px; width: 50px; float: left; background: red;">浮动元素</div>
+                <div style="overflow: hidden;">这是一个没有设置浮动，但是触发了BFC的元素。这是一个没有设置浮动，但是触发了BFC的元素。这是一个没有设置浮动，但是触发了BFC的元素。这是一个没有设置浮动，但是触发了BFC的元素。</div>
+            </div>
+        </div>
+    </body>
+</html>
