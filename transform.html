@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>transform</title>
+    <style media="screen">
+        /*
+                transform:
+                2D转换：
+                    translate()，根据左(X轴)和顶部(Y轴)位置给定的参数，从当前元素位置移动
+                    rotate()，在一个给定度数顺时针旋转的元素。负值是允许的，这样是元素逆时针旋转
+                    scale()，该元素增加或减少的大小，取决于宽度（X轴）和高度（Y轴）的参数
+                    skew()，包含两个参数值，分别表示X轴和Y轴倾斜的角度，如果第二个参数为空，则默认为0，参数为负表示向相反方向倾斜
+                    matrix()，matrix()方法和2D变换方法合并成一个。matrix 方法有六个参数，包含旋转，缩放，移动（平移）和倾斜功能。
+                3D转换：
+                    3D位移：CSS3中的3D位移主要包括translateZ()和translate3d()两个功能函数；
+                    3D旋转：CSS3中的3D旋转主要包括rotateX()、rotateY()、rotateZ()和rotate3d()四个功能函数；
+                    3D缩放：CSS3中的3D缩放主要包括scaleZ()和scale3d()两个功能函数；
+                    3D矩阵：CSS3中3D变形中和2D变形一样也有一个3D矩阵功能函数matrix3d()。
+            */
+            /*
+                transform-origin，属性允许您更改转换元素的位置，2D转换元素可以改变元素的X和Y轴。 3D转换元素，还可以更改元素的Z轴，默认原点是元素中心
+
+                以下是3D的属性：
+                transform--style属性指定嵌套元素是怎样在三维空间中呈现
+                perspective，属性只影响 3D 转换元素，规定 3D 元素的透视效果
+                perspective-origin,规定 3D 元素的底部位置,
+                backface-visibility，定义元素在不面对屏幕时是否可见，visible,hidden
+
+            */
+
+        .demo1 {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: #ccc;
+            transform: translate(200px, 0px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo1"></div>
+    <p>旋转角度</p>
+    <img src="./image/transform-40.jpg" alt="">
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>column</title>
+        <style media="screen">
+            .demo1 {
+                /*
+                column-count,属性指定了需要分割的列数
+                column-gap,属性指定了列与列间的间隙
+                column-rule-style,指定了列与列间的边框样式
+                column-rule-width,属性指定了两列的边框厚度
+                column-rule-color,指定了两列的边框颜色
+                column-rule,设置了列直接的边框的厚度，样式及颜色,上面三项的简写
+                column-span,指定元素要跨越多少列，1.none:此值为默认值，表示不跨越任何列；2.all：这个值跟none刚好相反，他表示的是元素跨越所有列
+                column-width,指定了列的宽度；3.其它数字
+                */
+                column-count：3;
+                column-gap: 50px;
+                column-rule-style: solid;
+                column-rule-width: 5px;
+                column-rule-color: red;
+                /*column-rule*/
+                column-span: none;
+                column-width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo1">column-count,属性指定了需要分割的列数
+        column-gap,属性指定了列与列间的间隙
+        column-rule-style,指定了列与列间的边框样式
+        column-rule-width,属性指定了两列的边框厚度
+        column-rule-color,指定了两列的边框颜色
+        column-rule,设置了列直接的边框的厚度，样式及颜色,上面三项的简写
+        column-span,指定元素要跨越多少列，1.none:此值为默认值，表示不跨越任何列；2.all：这个值跟none刚好相反，他表示的是元素跨越所有列
+        column-width,指定了列的宽度</div>
+    </body>
+</html>

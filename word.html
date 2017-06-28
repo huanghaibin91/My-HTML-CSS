@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>文本效果</title>
+        <style media="screen">
+            .demo1 {
+                margin: 50px;
+            }
+            .demo1 p.text1 {
+                margin: 30px;
+                /* text-shadow: h-shadow v-shadow blur(模糊距离) color; */
+                text-shadow: 2px 2px #ff0000;
+            }
+            .demo1 p.text2 {
+                margin: 30px;
+                width: 200px;
+                height: 30px;
+                line-height: 30px;
+                /*text-overflow ： clip | ellipsis;*/
+                /* 需要下面三个属性配合才能出现 */
+                overflow: hidden;
+                text-overflow: ellipsis;
+                /* white-space文本换行规则 */
+                white-space: nowrap;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo1">
+            <p class="text1">文字效果</p>
+            <p class="text2">文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果文字效果</p>
+        </div>
+    </body>
+</html>

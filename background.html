@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>背景</title>
+        <style media="screen">
+            .demo1 {
+                width: 500px;
+                height: 500px;
+                padding: 50px;
+                background-color: #ccc;
+                background-image: url('./image/0.jpg'), url('./image/0.jpg'), url('./image/0.jpg'), url('./image/0.jpg');
+                background-position: left top, right top, left bottom, right bottom;
+                background-size: 50px, 50px, 100px, 100px; /* background-size的两个特殊值cover此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小,contain此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小*/
+                background-repeat: no-repeat;
+                /* 属性指定了背景图像的位置区域主要就是用来决定背景图片的定位原点，换句话说就是背景图片定位的起点background-origin:  padding-box || border-box || content-box */
+                background-origin:  content-box;
+                /* 规定背景的绘制区域background-clip:  border-box || padding-box || content-box*/
+                background-clip: content-box;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="demo1"></div>
+        <p>background-clip盒子</p>
+        <img src="./image/background-clip-sn.png" alt=""><br>
+        <p>background-position位置图</p>
+        <img src="./image/background-position.png.jpg" alt="">
+    </body>
+</html>

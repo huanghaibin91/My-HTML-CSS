@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>渐变</title>
+        <style media="screen">
+            .demo1 {
+                width: 200px;
+                height: 200px;
+                margin: 50px;
+                /* 其共有三个参数，第一个参数表示线性渐变的方向，top是从上到下、left是从左到右，如果定义成left top，那就是从左上角到右下角。第二个和第三个参数分别是起点颜色和终点颜色。你还可以在它们之间插入更多的参数，表示多种颜色的渐变 */
+                background: -moz-linear-gradient(top, #ccc, #000);
+                background: -webkit-linear-gradient(top, #ccc, #000);
+                /* 标准写法 */
+                background: linear-gradient(top, #ccc, #000);
+            }
+            .demo2 {
+                width: 200px;
+                height: 200px;
+                margin: 50px;
+                background: -moz-radial-gradient(#ccc, #000);
+                background: -webkit-radial-gradient(#ccc, #000);
+                /* 标准写法 */
+                background: radial-gradient(#ccc, #000);
+            }
+        </style>
+    </head>
+    <body>
+        <!-- CSS3 Gradient分为linear-gradient(线性渐变)和radial-gradient(径向渐变)-->
+        <!-- 线性渐变（Linear Gradients）- 向下/向上/向左/向右/对角方向 -->
+        <!-- 径向渐变（Radial Gradients）- 由它们的中心定义 -->
+
+        <div class="demo1"></div>
+        <div class="demo2"></div>
+        <p>渐变语法</p>
+        <img src="./image/moz-gradient.png" alt=""><br>
+        <img src="./image/wekit-gradient-new.png" alt=""><br>
+        <img src="./image/opera-gradient.png" alt=""><br>
+        <img src="./image/7B0CC41A-86DC-4E1B-8A69-A410E6764B91.jpg" alt=""><br>
+
+    </body>
+</html>
