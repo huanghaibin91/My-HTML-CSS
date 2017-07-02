@@ -18,7 +18,7 @@
                 /* margin-top: -50px; */
                 /* 不知道元素的尺寸可以用transform移动元素 */
                 /*transform: translateY(-50%);*/
-                /*不知道尺寸也可以用margin：auto;然后设置top、bottom都为0*/
+                /*不知道尺寸也可以用margin：auto;然后设置top、bottom都为0，这样设置是因为top和bottom都是0，不足的部分会让margin不足，看起来也是居中*/
                 margin: auto;
                 top: 0;
                 bottom: 0;
@@ -42,7 +42,7 @@
                 display: flex;
                 align-items: center;
             }
-        </style>    
+        </style>
     </head>
     <body>
         <p>利用绝对定位垂直居中</p>
@@ -52,7 +52,7 @@
         <p>利用display: table;实现垂直居中</p>
         <div class="demo2">
             <div class="img-box">
-                <img src="./image/0.jpg" alt="" width="100" height="100" />                
+                <img src="./image/0.jpg" alt="" width="100" height="100" />
             </div>
         </div>
         <p>利用display: flex;实现垂直居中</p>
