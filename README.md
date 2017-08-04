@@ -4,9 +4,9 @@ CSS笔记
 ----------
 * text-align应用于块级元素，left、right、center会导致元素中的文本分别左对齐、右对齐和居中。
 
-* 一个块状元素不设置宽度高度也没有内容，如果要为元素设置背景颜色的话，就将块状元素设置为position:absolute;top:0;left:0;width:100%;height:100%；设置元素位置为绝对定位，位置和宽度、高度。
+* 一个块状元素不设置宽度高度也没有内容，如果要为元素设置背景颜色的话，就将块状元素设置为`position:absolute;top:0;left:0;width:100%;height:100%；`设置元素位置为绝对定位，位置和宽度、高度。
 
-* Line-height文本极限之间的距离，而不是字体的大小，它确定了将各个元素框的高度增加或减少多少。Line-height和字体大小之间的差就是行间距。 导航栏中设置line-height与导航栏宽度一致可以在改变鼠标移入导航栏时，导航栏的CSS状态改变宽度范围一致。
+* Line-height文本极限之间的距离，而不是字体的大小，它确定了将各个元素框的高度增加或减少多少。Line-height和字体大小之间的差就是行间距。 导航栏中设置line-height与导航栏宽度一致可以在改变鼠标移入导航栏时，导航栏的CSS状态改变宽度范围一致。line-heigh可以从父元素继承，当line-height为一个具体数时，子元素的line-height会直接使用之歌值，所以最好是指定一个缩放因子，这样元素的值会是与缩放因子计算后的值
 
 * 内容竖直排列，块级元素会自动下一行排列，内联元素可以设置为display:block;变成块状元素后竖直排列；设置为同一个方向浮动，但是浮动后面的内容会填补多余的内容区，导致排列混乱；利用自定义列表，列表内容自动竖直排列。
 
@@ -26,7 +26,7 @@ CSS笔记
 
 * 绝对定位方向是对立的（如：left vs right,top vs bottom）的时候，结果不是瞬时位移，而是身体的爆裂拉伸。也就是说，很多情况下，absolute的拉伸和width/height是可以相互替代的。（IE7+支持）
 
-* float的设计初衷是：为了文字环绕效果。
+* float的设计初衷是：为了文字环绕效果。浮动元素不会合并外边距。浮动元素会生成一个块级框，它会像块级元素一样摆放和表现0
 
 * 浮动具有破坏性，会让父元素高度塌陷。当浮动作用于图片后，图片的inline boxes被破坏，inline boxes高度线丢失，无法与文字这类inline boxes同行排列，于是图片从inline boxes链上脱离出来，受自身方向属性的影响，靠左显示，由于其“包裹性”，宽度实体依旧存在，加之与文字处于同一文档流中，文字不会与图片位置重叠，加上图片没有inline boxes，高度丢失，所以文字居顶显示形成新的inline boxes高度包络线。
 
@@ -79,4 +79,20 @@ CSS笔记
 
 * `<link rel="icon" type="image/ico" href="http://wickedlysmart.com/favicon.ico">``<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />`是为了指定浏览器标签地址栏的图片，利用图标工具（有很多）制作图标文件（favicon.ico）上传到网站所在的服务器的根目录下，这个文件必须是16*16大小的图标文件,如果想要收藏夹中的图标也要改变的话，那么就加上这句：`<link rel="Bookmark" href="favicon.ico" />`这个图标还可以使用png格式
 
-* 
+* 在CSS2中`:first-letter`和`:first-line`伪元素只能应用于标记或段落之类的块级元素，而不能用于超链接等行类元素
+
+* 所有伪元素都必须放在该伪元素选择器的最后面
+
+* URI，统一资源标识符。URL，统一资源定位符       
+
+* font简写时，font-style、font-weight、font-variant顺序随意，但是最后两个值必须是按顺序的font-size、font-family，且必须要有这两个值。在使用font简写属性时，所有被忽略的值都会被重置为默认值
+
+* text-indent适用于块状元素，行内元素无法使用，这个属性可以继承
+
+* text-align适用于块状元素的文本对齐，其中的属性值justify（两端对齐），会调整单词和字母间的间隔，使各行间的长度恰好相等
+
+* vertical-align只适用于行内元素或替换元素，且不能继承
+
+* padding、margin四个值：如果设定三个值，则第四个值会从第二个值复制得到 
+
+* CSS中浮动、绝对定位会使元素脱离文档流
