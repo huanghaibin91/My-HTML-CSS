@@ -20,9 +20,14 @@
                 height: 200px;
                 margin: 50px;
                 background: -moz-radial-gradient(#ccc, #000);
+                background: -moz-radial-gradient(left bottom, #ccc, #000);
                 background: -webkit-radial-gradient(#ccc, #000);
+                background: -webkit-radial-gradient(left bottom, #ccc, #000);
                 /* 标准写法 */
-                background: radial-gradient(#ccc, #000);
+                /* 默认渐变起始位置 */
+                /*background: radial-gradient(#ccc, #000);*/
+                /* 渐变位置爱左下角 */
+                background: radial-gradient(left bottom, #ccc, #000);
             }
         </style>
     </head>

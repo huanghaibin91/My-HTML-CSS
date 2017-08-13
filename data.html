@@ -21,6 +21,8 @@
         <p id="p2">Hello World</p>
 
         <script type="text/javascript">
+            // 选择元素
+            console.log(document.querySelector('[data-mydata]'));
             // HTML5中元素都会有一个dataset的属性，这是一个DOMStringMap类型的键值对集合
             var p2 = document.getElementById('p2');
             p2.dataset.yourdata = 'yourdata';
