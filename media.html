@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>媒体查询</title>
+    <!-- 可以针对不同的媒体使用不同 stylesheets -->
+    <!-- <link rel="stylesheet" media="mediatype and|not|only (media feature)" href="mystylesheet.css"> -->
+    <style type="text/css">
+        /* @media not|only mediatype and (expressions) {
+            CSS 代码...;
+        } */
+        /* mediatype属性有：all,print（打印机）.screen,speech（屏幕阅读器） */
+
+        /* 屏幕可视窗口尺寸大于 480 像素的设备上修改背景颜色 */
+        @media screen and (min-width: 480px) {
+            body {
+                background-color: lightgreen;
+            }
+        }
+
+        /* 屏幕可视窗口尺寸大于 320 像素和 480 的设备上修改背景颜色 */
+        @media screen and (min-width: 320px) and (max-width: 480px) {
+            body {
+                background-color: lightskyblue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+</body>
+
+</html>
