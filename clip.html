@@ -5,11 +5,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>元素剪切</title>
         <style media="screen">
-            /*clip,通过对元素进行剪切来控制元素的可显示区域，默认情况下，元素是不进行任何剪切的，但是也有可能剪切区域也显示的设置了clip属性*/
+            /*clip,通过对元素进行剪切来控制元素的可显示区域，默认情况下，元素是不进行任何剪切的，
+            但是也有可能剪切区域也显示的设置了clip属性*/
 
-            /*clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用。clip无法在设置“position:relative”和“position:static”上工作*/
+            /*clip属性只能在元素设置了“position:absolute”或者“position:fixed”属性起作用。
+            clip无法在设置“position:relative”和“position:static”上工作*/
 
-            /*clip属性只接受三个不同的属性值：<shape>：shape是一个函数功能，当使用仅使用rect()属性;auto：这是一个默认值，clip设置auto值和没有进行剪切是一样的效果;inherit：继承父元素的clip属性值*/
+            /*clip属性只接受三个不同的属性值：<shape>：shape是一个函数功能，当使用仅使用rect()属性;
+            auto：这是一个默认值，clip设置auto值和没有进行剪切是一样的效果;inherit：继承父元素的clip属性值*/
 
             .demo1 {
                 position: absolute;
@@ -17,7 +20,9 @@
                 left: 0;
                 width: 530px;
                 height: 308px;
-                /*接下来我们来看rect()使用方法。rect()需要设置四个值：top, right, bottom和left。他们之间需要用逗号隔开，而且rect()属性值和margin、padding以及bodrder具有一样的标准，遵循TRBL顺时针旋转的规则*/
+                /*接下来我们来看rect()使用方法。rect()需要设置四个值：top, right, bottom和left。
+                他们之间需要用逗号隔开，而且rect()属性值和margin、padding以及bodrder具有一样的标准，
+                遵循TRBL顺时针旋转的规则*/
                 clip: rect(10px, 500px, 300px, 5px);
                 /*1、不显示剪切区域：当rect()中的bottom值小于top值，或者right值小于left值时，整个剪切区域不会显示*/
                 /*2、top和left取值为auto，当top或者left取值为auto时，相当于取值为0*/

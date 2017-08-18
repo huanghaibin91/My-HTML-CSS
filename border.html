@@ -18,8 +18,17 @@
                 height: 200px;
                 margin: 50px;
                 background: #ccc;
-                /* box-shadow: h-shadow(必需的。水平阴影的位置。允许负值,可以是正负值。如果值为正值，则阴影在对象的右边，其值为负值时，阴影在对象的左边) v-shadow(必需的。垂直阴影的位置。允许负值,可以是正负值。如果为正值，阴影在对象的底部，其值为负值时，阴影在对象的顶部) blur(可选。模糊距离,模糊距离为0，则是实线，类似边框，其值只能是为正值，如果其值为0时，表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊) spread(可选。阴影的大小) color(可选。阴影的颜色) inset(可选。从外层的阴影（开始时）改变阴影内侧阴影); */
-                /* 阴影类似于按box大小造出一个阴影框，阴影的h-shadow和v-shadow相当于确定阴影框的位置，将它进行水平和垂直方向的定位 */
+                /* box-shadow: h-shadow(必需的。水平阴影的位置。允许负值,可以是正负值。如果值为正值，
+                则阴影在对象的右边，其值为负值时，阴影在对象的左边) 
+                v-shadow(必需的。垂直阴影的位置。允许负值,可以是正负值。如果为正值，阴影在对象的底部，
+                其值为负值时，阴影在对象的顶部) 
+                blur(可选。模糊距离,模糊距离为0，则是实线，类似边框，其值只能是为正值，如果其值为0时，
+                表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊)，
+                spread(可选。阴影的大小) 
+                color(可选。阴影的颜色) 
+                inset(可选。从外层的阴影（开始时）改变阴影内侧阴影); */
+                /* 阴影类似于按box大小造出一个阴影框，阴影的h-shadow和v-shadow相当于确定阴影框的位置，
+                将它进行水平和垂直方向的定位 */
                 /*
                 box-shadow: box-shadow-style <length> <length> <length>?<length>?||<color>
                 box-shadow:inset x-offset y-offset blur-radius spread-radius color
@@ -32,19 +41,32 @@
                 /*height: 232px;*/
                 margin: 50px;
                 background: #ccc;
-                /*border-image: source(属性指定要使用的图像路径) slice(图像的边界向内偏移,切割引入的图片) width(图像边界的宽度,边框的宽度) outset(在边框外部绘制 border-image-area 的量) repeat(图像边界是否应重复（repeated）、拉伸（stretched）或铺满（rounded）,图片的排列方式);*/
+                /* border-image: source slice width outset repeat|initial|inherit; */
+                /*border-image: source(属性指定要使用的图像路径) 
+                slice(图像的边界向内偏移，纯数字或百分比不能带单位,切割引入的图片，从上右下左四个方向四条线将图片切割成
+                九个部分，还有个参数fill，设置则保留切好的中间部分，否则透明处理) 
+                width(图像边界的宽度,边框的宽度，切好的图片会占满边框的宽度) 
+                outset(在边框外部绘制 border-image-area 的量 让边框背景延伸到盒子外一段距离) 
+                repeat(图像边界是否应重复（repeated）、拉伸（stretched）或铺满（rounded）,图片的排列方式);*/
                 /* slice,width,repeat都可以设置四个值，四个方向，跟margin之类一致 */
                 /*outline（轮廓）是绘制于元素周围的一条线，位于边框边缘的外围，可起到突出元素的作用*/
                 outline: 2px solid red;
                 border-image: url('./image/0.jpg') 200 200 round;
+            }
+            .demo4 {
+                width: 200px;
+                height: 200px;
+                border: 1px solid red;
+                box-shadow: 0px -10px 0px 5px #aaaaaa inset, -5px 0px 0px #aaaaaa inset, 0px 0px 5px #aaaaaa inset, 0px -5px 0px #aaaaaa  inset;                
             }
         </style>
     </head>
     <body>
         <div class="demo1"></div>
         <div class="demo2"></div>
+        <div class="demo4"></div>
         <div class="demo3">
-            <img src="./image/border-image-slice.jpg" alt=""><br>
+            <img src="./image/border-image-slice.gif" alt=""><br>
             <img src="./image/groovy-border-image-slice.png" alt=""><br>
             <img src="./image/border-image-jugongtu.png" alt=""><br>
             <img src="./image/border-image-jugongtu-2.png" alt=""><br>

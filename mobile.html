@@ -2,26 +2,47 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <!-- 元数据（Metadata）是数据的数据信息。<meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，但是会被浏览器解析。META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。数据可以被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用。 -->
-        <!-- meta viewport 有6个属性：width，设置layout viewport的宽度，为一个正整数，或字符串"device-width"。initial-scale，设置页面的初始缩放值，为一个数字，可以带小数。minimum-scale，允许用户的最小缩放值，为一个数字，可以带小数。maximum-scale，允许用户的最大缩放值，为一个数字，可以带小数。height，	设置layout viewport  的高度，这个属性对我们并不重要，很少使用。user-scalable，是否允许用户进行缩放，值为"no"或"yes", no 代表不允许，yes代表允许 -->
-        <!-- 通过width=device-width，所有浏览器都能把当前的viewport宽度变成ideal viewport的宽度，缩放是相对于 ideal viewport来进行缩放的，当对ideal viewport进行100%的缩放，缩放也可以把当前的的viewport变为 ideal viewpor，两个有冲突时，去大的那个值 -->
+        <!-- 元数据（Metadata）是数据的数据信息。<meta> 标签提供了 HTML 文档的元数据。元数据不会显示在客户端，
+            但是会被浏览器解析。META元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者及其他元数据。
+            数据可以被使用浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 Web 服务调用。 -->
+        <!-- meta viewport 有6个属性：width，设置layout viewport的宽度，为一个正整数，或字符串"device-width"。
+            initial-scale，设置页面的初始缩放值，为一个数字，可以带小数。minimum-scale，允许用户的最小缩放值，
+            为一个数字，可以带小数。maximum-scale，允许用户的最大缩放值，为一个数字，可以带小数。height，	
+            设置layout viewport  的高度，这个属性对我们并不重要，很少使用。user-scalable，是否允许用户进行缩放，
+            值为"no"或"yes", no 代表不允许，yes代表允许 -->
+        <!-- 通过width=device-width，所有浏览器都能把当前的viewport宽度变成ideal viewport的宽度，
+            缩放是相对于 ideal viewport来进行缩放的，当对ideal viewport进行100%的缩放，缩放也可以把当前的的viewport
+            变为 ideal viewpor，两个有冲突时，去大的那个值 -->
 
         <!-- 虚拟的viewportvisualviewport和布局的viewportlayoutviewport不能改变大小 -->
-        <!-- layoutviewport的宽度每个浏览器都不同。iPhone上的Safari使用980px、Opera 850px，安卓的Webkit核心800px，IE974px，度量layout viewviewport尺寸document. documentElement. clientWidth/Height 度量visual viewport尺寸window.innerWidth/Height显然，随着用户缩放浏览器，这值会改变，更多、更少的CSS pixels放进了屏幕著作权归作者所有。 -->
+        <!-- layoutviewport的宽度每个浏览器都不同。iPhone上的Safari使用980px、Opera 850px，安卓的Webkit核心800px，
+            IE974px，度量layout viewviewport尺寸document. documentElement. clientWidth/Height 度量visual viewport尺寸
+            window.innerWidth/Height显然，随着用户缩放浏览器，这值会改变，更多、更少的CSS pixels放进了屏幕。 -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
         <title>mobile</title>
         <style media="screen">
-            /*物理像素(physical pixel)：一个物理像素是显示器(手机屏幕)上最小的物理显示单元，在操作系统的调度下，每一个设备像素都有自己的颜色值和亮度值，可以把这些像素看作成显示器上一个个的点，是固定不变的 */
-            /*设备独立像素(density-independent pixel)：设备独立像素(也叫密度无关像素)，可以认为是计算机坐标系统中得一个点，这个点代表一个可以由程序使用的虚拟像素(比如: css像素)，然后由相关系统转换为物理像素，设备独立像素是可以被拉长或者被压缩的。所以说，物理像素和设备独立像素之间存在着一定的对应关系，这就是接下来要说的设备像素比。 */
-            /*CSS像素是Web编程的概念，独立于设备的用于逻辑上衡量像素的单位，也就是说我们在做网页时用到的CSS像素单位，是抽象的，而不是实际存在的*/
-            /*设备像素比(device pixel ratio )：设备像素比(简称dpr)定义了物理像素和设备独立像素的对应关系，它的值可以按如下的公式的得到：设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向 */
+            /*物理像素(physical pixel)：一个物理像素是显示器(手机屏幕)上最小的物理显示单元，在操作系统的调度下，
+            每一个设备像素都有自己的颜色值和亮度值，可以把这些像素看作成显示器上一个个的点，是固定不变的 */
+            /*设备独立像素(density-independent pixel)：设备独立像素(也叫密度无关像素)，可以认为是计算机坐标系统中得一个点，
+            这个点代表一个可以由程序使用的虚拟像素(比如: css像素)，然后由相关系统转换为物理像素，
+            设备独立像素是可以被拉长或者被压缩的。所以说，物理像素和设备独立像素之间存在着一定的对应关系，
+            这就是接下来要说的设备像素比。 */
+            /*CSS像素是Web编程的概念，独立于设备的用于逻辑上衡量像素的单位，也就是说我们在做网页时用到的CSS像素单位，
+            是抽象的，而不是实际存在的*/
+            /*设备像素比(device pixel ratio )：设备像素比(简称dpr)定义了物理像素和设备独立像素的对应关系，
+            它的值可以按如下的公式的得到：设备像素比 = 物理像素 / 设备独立像素 // 在某一方向上，x方向或者y方向 */
 
-            /*dpr：设备像素比 = 物理像素 / 设备独立像素 */
-            /*在javascript中，可以通过window.devicePixelRatio获取到当前设备的dpr。在css中，可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。*/
-            /*以iphone6为例：设备宽高为375×667，可以理解为设备独立像素(或css像素)。dpr为2，根据上面的计算公式，其物理像素就应该×2，为750×1334*/
-            /*不同的屏幕上(普通屏幕 vs retina屏幕)，css像素所呈现的大小(物理尺寸)是一致的，不同的是1个css像素所对应的物理像素个数是不一致的。在普通屏幕下，1个css像素 对应 1个物理像素(1:1)。 在retina 屏幕下，1个css像素对应 4个物理像素(1:4)。 */
+            /*dpr：设备像素比 = 物理像素 / 设备独立像素（因为设备独立像素可以被拉伸，所以取值选初始屏幕大小） */
+            /*在javascript中，可以通过window.devicePixelRatio获取到当前设备的dpr。在css中，
+            可以通过-webkit-device-pixel-ratio，-webkit-min-device-pixel-ratio和 -webkit-max-device-pixel-ratio
+            进行媒体查询，对不同dpr的设备，做一些样式适配(这里只针对webkit内核的浏览器和webview)。*/
+            /*以iphone6为例：设备宽高为375×667，可以理解为设备独立像素(或css像素)。dpr为2，根据上面的计算公式，
+            其物理像素就应该×2，为750×1334*/
+            /*不同的屏幕上(普通屏幕 vs retina屏幕)，css像素所呈现的大小(物理尺寸)是一致的，不同的是1个css像素所对应的
+            物理像素个数是不一致的。在普通屏幕下，1个css像素 对应 1个物理像素(1:1)。 在retina 屏幕下，1个css像素对应 
+            4个物理像素(1:4)。 */
             /* 媒体查询 */
             @media screen and (max-width: 500px) {
                 body {
@@ -44,12 +65,16 @@
     </head>
     <body>
         <div></div>
-        <img src="./image/viewport.png" alt="">
+        <img src="./image/meta.png" alt=""><br>
+        <img src="./image/viewport.png" alt=""><br>
         <p>
-            在不同的屏幕上(普通屏幕 vs retina屏幕)，css像素所呈现的大小(物理尺寸)是一致的，不同的是1个css像素所对应的物理像素个数是不一致的。在普通屏幕下，1个css像素 对应 1个物理像素(1:1)。 在retina 屏幕下，1个css像素对应 4个物理像素(1:4),长宽各对应2，面积对应4
+            <strong>在不同的屏幕上(普通屏幕 vs retina屏幕)，css像素所呈现的大小(物理尺寸)是一致的，
+                不同的是1个css像素所对应的物理像素个数是不一致的。</strong>
+            在普通屏幕下，1个css像素 对应 1个物理像素(1:1)。 在retina 屏幕下，1个css像素对应 4个物理像素(1:4),
+            长宽各对应2，面积对应4
         </p>
-        <img src="./image/px.gif" alt="">
-        <p>Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World Hello World </p>
+        <img src="./image/px.gif" alt=""><br />
+        <img src="./image/retina-web-10.jpg"
 
         <script type="text/javascript">
             // 针对不同手机屏幕尺寸和dpr动态的改变根节点html的font-size大小(基准值)。
