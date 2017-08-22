@@ -19,7 +19,7 @@
 
         <!-- 虚拟的viewportvisualviewport和布局的viewportlayoutviewport不能改变大小 -->
         <!-- layoutviewport的宽度每个浏览器都不同。iPhone上的Safari使用980px、Opera 850px，安卓的Webkit核心800px，
-            IE974px，度量layout viewviewport尺寸document. documentElement. clientWidth/Height 度量visual viewport尺寸
+            IE974px，度量layout viewviewport尺寸document.documentElement.clientWidth/Height 度量visual viewport尺寸
             window.innerWidth/Height显然，随着用户缩放浏览器，这值会改变，更多、更少的CSS pixels放进了屏幕。 -->
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -84,8 +84,7 @@
             // 提取了一个公式(rem表示基准值)
             // rem = document.documentElement.clientWidth * dpr / 10
 
-
-            // 动态设置计算出基准值rem，然后写入样式，除字体外通过基准值布局
+            // 动态设置计算出基准值rem，然后写入样式，除字体外通过基准值布局s
             var dpr, rem, scale;
             var docEl = document.documentElement;
             var fontEl = document.createElement('style');
