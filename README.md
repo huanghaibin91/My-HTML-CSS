@@ -19,9 +19,9 @@ CSS笔记
 	![](./image/HTML.jpg)
 * CSS盒模型是围绕在HTML元素周围的定义Border(边界)，padding(内边距)和margin(外边距)的矩形空间
 
-* text-align应用于块级元素，left、right、center会导致元素中的文本分别左对齐、右对齐和居中。
+* CSS 框模型 (Box Model) 规定了元素框处理元素内容、内边距、边框和外边距的方式
 
-* 一个块状元素不设置宽度高度也没有内容，如果要为元素设置背景颜色的话，就将块状元素设置为`position:absolute;top:0;left:0;width:100%;height:100%；`设置元素位置为绝对定位，位置和宽度、高度。
+* text-align应用于块级元素，left、right、center会导致元素中的文本分别左对齐、右对齐和居中。
 
 * Line-height文本极限之间的距离，而不是字体的大小，它确定了将各个元素框的高度增加或减少多少。Line-height和字体大小之间的差就是行间距。 导航栏中设置line-height与导航栏宽度一致可以在改变鼠标移入导航栏时，导航栏的CSS状态改变宽度范围一致。line-heigh可以从父元素继承，当line-height为一个具体数时，子元素的line-height会直接使用之歌值，所以最好是指定一个缩放因子，这样元素的值会是与缩放因子计算后的值
 
