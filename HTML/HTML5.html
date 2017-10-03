@@ -4,7 +4,13 @@
 在 HTML 4.01 中，<!DOCTYPE> 声明需引用 DTD （文档类型声明），因为 HTML 4.01 是基于 SGML 
 （Standard Generalized Markup Language 标准通用标记语言）。DTD 指定了标记语言的规则，确保了浏览器能够正确的渲染内容。
 HTML5 不是基于 SGML，因此不要求引用 DTD -->
-<html lang="zh-CN">
+<html lang="zh-CN" manifest="URL">
+<!-- manifest 属性规定文档的缓存 manifest 的位置，应用程序缓存使得应用程序有三个优点：
+    1.离线浏览 - 用户可以在离线时使用应用程序
+    2.快速 - 缓存的资源可以更快地加载
+    3.减少服务器加载 - 浏览器只从服务器上下载已更新/已更改的资源
+
+-->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">

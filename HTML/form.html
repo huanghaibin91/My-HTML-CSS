@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>From</title>
+    <style>
+        textarea {
+            resize: none;
+            /* 禁止textarea拖动 */
+        }
+    </style>
+</head>
+<body>
+    <form name="my-form" action="example.php" method="post" autocomplete="on" enctype="multipart/form-data">
+    <!-- action，属性规定当提交表单时，向何处发送表单数据 -->
+    <!-- method，规定用于发送表单数据的 HTTP 方法，属性GET和POST -->
+    <!-- autocomplete 属性规定表单是否应该启用自动完成功能。自动完成允许浏览器预测对字段的输入。当用户在字段开始键入时，
+        浏览器基于之前键入过的值，应该显示出在字段中填写的选项 -->
+    <!-- enctype，属性规定在将表单数据发送到服务器之前如何对其进行编码，只有 method="post" 时才使用 enctype 属性，三个值：
+        application/x-www-form-urlencoded，默认。在发送前对所有字符进行编码（将空格转换为"+"符号，特殊字符转换为ASCII HEX值）
+        multipart/form-data，不对字符编码。当使用有文件上传控件的表单时，该值是必需的。
+        text/plain，将空格转换为 "+" 符号，但不编码特殊字符。
+    -->
+        <fieldset>
+            <legend>My Form</legend>
+            <input type="text" placeholder="Readyonly" readonly><br>
+            <input type="text" list="my-list" placeholder="Enter message"><br>
+            <input type="image" src="../image/0.jpg" width="50" height="50"><br>
+            <datalist id="my-list">
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+            </datalist>
+            <input name="color" value="red" type="radio" checked>RED
+            <input name="color" value="green" type="radio">GREEN
+            <input name="color" value="blue" type="radio">BLUE<br>
+            <input type="checkbox" name="number" value="1">ONE
+            <input type="checkbox" name="number" value="2">TWO
+            <input type="checkbox" name="number" value="3">THREE<br>
+            <input type="file" accept="image/*,audio/*,video/*"><br>
+            <!-- accept 属性规定了可通过文件上传提交的服务器接受的文件类型，属性：audio/*|video/*|image/*|MIME_type -->
+            <textarea name="my-textarea" id="" cols="30" rows="10"></textarea><br>
+            <select name="my-select" id=""><br>
+                <optgroup label="group-one">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                </optgroup>
+                <optgroup label="group-two">
+                    <option value="">3</option>
+                    <option value="">4</option>
+                    <option value="">5</option>
+                </optgroup>
+            </select>
+            <button type="reset" disabled>Reset</button>
+            <button type="submit">Submit</button>
+            <!-- button默认type是submit，所以表单中使用button不设置type也会提交表单 -->
+        </fieldset>
+    </form>
+</body>
+</html>
