@@ -1,0 +1,24 @@
+CACHE MANIFEST
+#文件第一行必须以CACHE MANIFEST开头，否则浏览器解析会报错，注释使用#开头，在这一行下面跟着需要缓存的资源
+#Manifest怎么知道当前页面数据更新了呢？只要把你把manifest文件如上面的home.appcache更改一下就可以了，浏览器打
+#开页面时都会去加载这个文件，一旦发现这个文件发生了变化下次刷新的时候就会重新加载所有Cache的文件，最简单的可以把
+#注释里的时间改成当前的时间就可以了
+#9/27/2017, 3:04:25 PM
+#html，要缓存的HTML
+https://github.com/
+#img，要缓存的图片
+https://assets-cdn.github.com/images/modules/site/universe-octoshop.png
+https://assets-cdn.github.com/images/modules/site/universe-wordmark.png
+#css，要缓存的CSS
+https://assets-cdn.github.com/assets/frameworks-bedfc518345231565091.css
+#js，要缓存的JS
+https://assets-cdn.github.com/assets/compat-94eba6e3cd1fa18902d9.js
+#NETWORK表示哪些资源需要联网加载，一般需要写成NETWORK *，表示除了CACHE外的其它所有资源都需要联网，包括一些动态请求，
+#如果你不是写的*，而是写了具体路径，那些既没有在CAHCE的，也没有在NETWORK的就会报加载失败的错误
+NETWORK:
+*
+
+#FALLBACK表示替代资源，这些资源加载不到就替代加载哪些资源，如上面的文件https://github.com访问不了就使用一个静态
+#的html访问：https://github.com/html/manifest/html/home.html
+FALLBACK
+https://github.com/ /html/manifest/html/home.html

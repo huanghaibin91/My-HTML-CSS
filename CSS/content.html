@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Content</title>
+    <style>
+        /* content IE8+ */
+        /* content属性早在CSS2.1的时候就被引入了，可以使用:before以及:after伪元素生成内容 */
+        div.div1::after {
+            content: 'hello world';
+            display: block;
+        }
+        /* content属性的值除了使用文本值外，还可以使用标签的一些属性值，方法是attr() */
+        div.div2::after {
+            content: "可以用引号加入其它内容" attr(data-name);
+            display: block;
+        }
+        /* 通过URL获取图片 */
+        div.div3::after {
+            content: url(../image/0.jpg);
+            display: block;
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">Hello World</div>
+    <div class="div2" data-name="hello">Hello</div>
+    <div class="div3"></div>
+</body>
+</html>

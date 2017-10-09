@@ -4,16 +4,27 @@
 在 HTML 4.01 中，<!DOCTYPE> 声明需引用 DTD （文档类型声明），因为 HTML 4.01 是基于 SGML 
 （Standard Generalized Markup Language 标准通用标记语言）。DTD 指定了标记语言的规则，确保了浏览器能够正确的渲染内容。
 HTML5 不是基于 SGML，因此不要求引用 DTD -->
-<html lang="zh-CN" manifest="URL">
+<html lang="zh-CN" manifest="./home.appcache">
 <!-- manifest 属性规定文档的缓存 manifest 的位置，应用程序缓存使得应用程序有三个优点：
     1.离线浏览 - 用户可以在离线时使用应用程序
     2.快速 - 缓存的资源可以更快地加载
     3.减少服务器加载 - 浏览器只从服务器上下载已更新/已更改的资源
+    参数属性指向一个manifest的文件，这个文件指明了当前页面哪些资源需要进行离线缓存
 
+    Manifest注意 :
+    Manifest有大小限制，它其实也算本地存储，本地存储一般每个域有限制使用的空间，PC Chrome是5M
+    Manifest文件如home.appcahce不能跨域，如果跨域需要支持CORS
+    Manifest Cache的资源不能跨域，同样如果跨域该资源需要支持CORS，一般浏览器会自动处理
+
+    除了Manifest之外，还有另外一个缓存的手段，就是设置HTTP报文头的Cache-Control字段进行缓存，这个可以缓存JS/CSS/图片资源，
+    但是如果你把HTML也缓存了就会有一个问题，如果用户不清除缓存，即使你的页面更新了，用户仍然会加载老的页面，直到缓存设定
+    Max-Age时间到了。所以用Manifest可以解决这个问题
 -->
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- 加载图标，大小一般是16x16，32x32 -->
+        <link rel="icon" href="path" sizes="32x32">
         <title>HTML5</title>
         <style media="screen">
 

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        /* counter规则：普照源(counter-reset)唯一，每普照(counter-increment)1次，普照源增加1次计数值 */
+        /* 使用counter-increment时，从DOM节点向上搜寻counter-reset触发找到的第一个counter-reset规则，不会影响其他规则 */
+        /* 不同的元素绑定同名的counter-reset互不影响 */
+        /* counter属性：
+            counter-reset 创建或重置一个或多个计数器
+            counter-increment 递增或递减一个或多个计数器
+            counter(nmae, style) 方法，style参数可选，是list-style-type支持的那些关键字
+            counters(name, string) 方法，string参数为字符串（需要引号包围的）（必须参数），表示子序号的连接字符串
+        */
+        /* 一个元素，如果设置了counter-increment, 但是其display的属性值是none或者含有hidden属性（针对支持浏览器）
+        ，则此计数值是不会增加的。而visibility:hidden以及其他声明不会有此现象 */
+        body {
+            /* id 定义重置计数器的选择器、id 或 class。 number 可设置此选择器出现次数的计数器的值。可以是正数、零或负数
+            多个计数器用空格分开 */
+            counter-reset: one 2 two 3;
+        }
+        div::before {
+            content: counter(one) '. ';
+            /* counter-increment，两个参数：id，id 定义将增加计数的选择器、id 或 class；number 定义增量。number 可以是
+            正数、零或者负数。默认为1 */
+            counter-increment: one 2;
+            color: red;
+        }
+        div::after {
+            content: counter(two) '. ';
+            color: green;
+        }
+        /* 如果子元素与父元素都绑定同一个计数器都会触发计数，子元素触发counter-increment就都会改变 */
+        div.div1 p::before {
+            counter-increment: one 1;
+            content: counter(one) '. ';
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <p>1</p>
+        <p>2</p>
+    </div>
+    <div>two</div>
+    <div>three</div>
+</body>
+</html>

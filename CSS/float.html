@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Float</title>
+    <style>
+        /* 浮动元素包含块：浮动元素的包含块就是离浮动元素最近的块级祖先元素 */
+        /* 一个元素被设置为浮动就会成为一个块级元素 */
+        /* 浮动元素的展示在不同情况下会有不同的规则：
+            1.浮动元素在浮动的时候，其margin不会超过包含块的padding
+            2.如果有多个浮动元素，后面的浮动元素的margin不会超过前面浮动元素的margin
+            3.如果两个元素一个向左浮动，一个向右浮动，左浮动元素的marginRight不会和右浮动元素的marginLeft相邻
+            当如果包含块宽度不够高，后面的浮动元素将会向下浮动，其顶端是前面浮动元素的底端
+            4.浮动元素顶端不会超过包含块的内边界底端，如果有多个浮动元素，下一个浮动元素的顶端不会超过上一个浮动元素的底端
+            5.如果有非浮动元素和浮动元素同时存在，并且非浮动元素在前，则浮动元素不会不会高于非浮动元素
+            6.浮动元素会尽可能地向顶端对齐、向左或向右对齐
+        */
+        /* 浮动元素与正常流元素重叠时：
+            1、行内元素与浮动元素发生重叠，其边框，背景和内容都会显示在浮动元素之上
+            2、块级元素与浮动元素发生重叠时，边框和背景会显示在浮动元素之下，内容会显示在浮动元素之上
+        */
+
+        div.box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+
+        div.left {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            float: left;
+        }
+        /* 清除浮动 */
+
+        .clearfix1 {
+            overflow: hidden;
+            /* 利用触发了BFC，缺点如果子元素超出父元素的范围，会造成超出的部分被隐藏 */
+        }
+        /* 使用clear清理浮动原理是，浏览器在元素顶上添加足够的外边距，使元素的顶边缘垂直下降到浮动框下边，
+        这样的现象可以解决父元素高度问题 */
+        .clearfix {
+            zoom: 1
+        }
+        .clearfix::after {
+            display: block;
+            content: '';
+            clear: both;
+            height: 0;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left"></div>
+        设置浮动后文字会环绕浮动元素
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Table</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            /* border-spacing: 50px; 在border-collapse设置为separate时起效，设置每个格子间距 */
+            caption-side: bottom;
+            /* empty-cells: hide; border-collapse设置为separate时起效 */
+            table-layout: fixed;
+            /* fixed列宽由表格宽度和列宽度设定，automatic，默认。列宽度由单元格内容设定 */
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <caption>成绩单</caption>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>成绩</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td rowspan="2">小红</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td colspan="2">小丽</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>以上</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
