@@ -24,7 +24,7 @@
                 其值为负值时，阴影在对象的顶部) 
                 blur(可选。模糊距离,模糊距离为0，则是实线，类似边框，其值只能是为正值，如果其值为0时，
                 表示阴影不具有模糊效果，其值越大阴影的边缘就越模糊)，
-                spread(可选。阴影的大小) 
+                spread(可选。阴影的大小) 阴影外延出去总的长度
                 color(可选。阴影的颜色) 
                 inset(可选。从外层的阴影（开始时）改变阴影内侧阴影); */
                 /* 阴影类似于按box大小造出一个阴影框，阴影的h-shadow和v-shadow相当于确定阴影框的位置，
@@ -59,12 +59,19 @@
                 border: 1px solid red;
                 box-shadow: 0px -10px 0px 5px #aaaaaa inset, -5px 0px 0px #aaaaaa inset, 0px 0px 5px #aaaaaa inset, 0px -5px 0px #aaaaaa  inset;                
             }
+            .demo5 {
+                width: 200px;
+                height: 200px;
+                /* outline 没有实际尺寸 */
+                outline: 5px solid red;
+            }
         </style>
     </head>
     <body>
         <div class="demo1"></div>
         <div class="demo2"></div>
         <div class="demo4"></div>
+        <div class="demo5"></div>
         <div class="demo3">
             <img src="../image/border-image-slice.gif" alt=""><br>
             <img src="../image/groovy-border-image-slice.png" alt=""><br>

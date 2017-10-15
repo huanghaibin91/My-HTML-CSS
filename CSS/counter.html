@@ -30,6 +30,7 @@
             color: red;
         }
         div::after {
+            /* 没有counter-increment，那么只会获取计数器的初始值，计数器不会改变 */
             content: counter(two) '. ';
             color: green;
         }
