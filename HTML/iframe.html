@@ -26,6 +26,7 @@
     <iframe id="mainIframe" name="mainIframe" src="./HTML5.html" frameborder="0" scrolling="auto"></iframe>
     <!-- 不同域，父页面没有权限改动子页面,但可以实现页面的跳转 -->
     <iframe id="mainIframe" name="mainIframe" src="http://www.baidu.com" frameborder="0" scrolling="auto"></iframe>
+    <div id="container"></div>
 
     <script>
         // 获取iframe里的内容
@@ -43,10 +44,10 @@
         // iframe实现长轮询
         var iframeCon = docuemnt.querySelector('#container'),
             text; //传递的信息
-        var iframe = document.createElement('iframe'),
-            iframe.id = "frame",
-            iframe.style = "display:none;",
-            iframe.name = "polling",
+        var iframe = document.createElement('iframe');
+            iframe.id = "frame";
+            iframe.style = "display:none;";
+            iframe.name = "polling";
             iframe.src = "target.html";
         iframeCon.appendChild(iframe);
         iframe.onload = function () {
