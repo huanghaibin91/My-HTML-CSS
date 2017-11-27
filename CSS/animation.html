@@ -51,7 +51,7 @@
             height: 200px;
             margin: 50px;
             background: #ccc;
-            /*step-end与上面相反，都是以上一帧的显示效果来填充间隔动画，所以0% 到25% 直接就显示了红色red，25%-50%黄色，
+            /*step-end与下面相反，都是以上一帧的显示效果来填充间隔动画，所以0% 到25% 直接就显示了红色red，25%-50%黄色，
             50%-100%蓝色*/
             /* animation: myfirst 5s step-end infinite; */
             animation: myfirst 5s steps(5, start) infinite;
@@ -59,7 +59,7 @@
             关键帧之间，而不是整个动画的间隔数量（必须是正整数）第二个参数可选，接受 start(下一帧)和 end(上一帧) 两个值，
             指定在每个间隔的起点或是终点发生阶跃变化，默认为 end*/
             /*steps(1,start):动画一开始就跳到 100% 直到这一帧（不是整个周期）结束steps(1,end):保持 0% 的样式直到
-            这一帧（不是整个周期）结束另外也可以直接设置 animation-timing-function:step-start/step-endstep-start
+            这一帧（不是整个周期）结束另外也可以直接设置 animation-timing-function:step-start/step-end，step-start
             效果等同于steps(1,start)，step-end效果等同于steps(1,end)*/
         }
 

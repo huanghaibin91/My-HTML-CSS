@@ -5,18 +5,18 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <style type="text/css">
-            /*BFC 的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 
+            /* BFC 的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 
             具有普通容器没有的一些特性，例如可以包含浮动元素，清除浮动的方法（如 overflow 方法）
-            就是触发了浮动元素的父元素的 BFC ，使到它可以包含浮动元素，从而防止出现高度塌陷的问题*/
+            就是触发了浮动元素的父元素的 BFC ，使到它可以包含浮动元素，从而防止出现高度塌陷的问题 */
 
-            /*满足下面任一条件的元素，会触发为 BFC ：*/
+            /* 满足下面任一条件的元素，会触发为 BFC ：*/
             /*  
                 根元素 
                 浮动元素，float 除 none 以外的值
                 绝对定位元素，position（absolute，fixed）
                 display 为以下其中之一的值 inline-block，table-cell，table-caption，flex
                 overflow 除了 visible 以外的值（hidden，auto，scroll）*/
-                /* 
+            /* 
                 BFC区域约束条件：
                 内部的Box会在垂直方向上一个接一个的放置
                 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）
