@@ -43,15 +43,26 @@
         }
         /* 使用clear清理浮动原理是，浏览器在元素顶上添加足够的外边距，使元素的顶边缘垂直下降到浮动框下边，
         这样的现象可以解决父元素高度问题 */
+
         .clearfix {
             zoom: 1
         }
+
         .clearfix::after {
             display: block;
-            content: '';
+            content: '.';
             clear: both;
             height: 0;
             visibility: hidden;
+        }
+
+        .clearfix2 {
+            display: block;
+            visibility: hidden;
+            clear: both;
+            height: 0;
+            overflow: hidden;
+            content: '.';
         }
     </style>
 </head>

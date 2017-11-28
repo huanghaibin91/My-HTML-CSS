@@ -4,12 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>栅格</title>
+    <title>网格</title>
     <style>
-        
+        /* IE10+ 支持 */
+        /* 网格容器，通过使用display属性给元素显式设置了属性值grid或inline-grid，此时这个元素将自动变成网格容器 */
+        /* 网格项，网格容器的子元素 */
+        /* 网格线，分界线构成了网格的结构。是垂直的("列网格线")或是水平的("行网格线")，并且存在于一行或一列的任一侧 */
+        /* 网格轨道，两个相邻网格线之间的空间。你可以把它们想像成网格的行或列 */
+        /* 网格单元格，两个相邻的行和两个相邻的列之间的网格线空间。它是网格的一个"单位" */
+        /* 网格区域，网格区域可由任意数量的网格单元格组成 */
+        /*  */
+        #app {
+            /* grid: 产生一个块级的网格，inline-grid: 产生内联级网格 */
+            display: grid; 
+            /* grid-template-columns: <track-size> ... | <line-name> <track-size> ... | subgrid;
+            grid-template-rows: <track-size> ... | <line-name> <track-size> ... | subgrid; */
+            /* <track-size>: 可以是一个长度、百分比或者是网格中自由空间的一小部分(使用fr单位)，fr单位是将空间分成等分
+            <line-name>: 你选择的任意名
+            subgrid - 如果你的网格容器本身就是一个网格项(即嵌套网格)，你可以使用此属性指定行和列的大小继承于父元素而不是自
+            身指定 */
+            /* 设置网格一行分成几部分，是几部分写几个，特殊值auto会是设置具体指后网格容器剩余的值 */
+            grid-template-rows: 25% 25% 25% 25%;
+            /* 如果都是一样的可以使用repeat简写 */
+            /* grid-template-rows: repeat(4, 25%); */
+            grid-template-columns: 25% 25% 25% 25%;
+            /* grid-column-gap: <line-size>; 值为一个长度值
+            grid-row-gap: <line-size>; */
+            grid-row-gap: 10px;
+            grid-column-gap: 10px;
+            /* grid-gap，grid-column-gap 和 grid-row-gap的简写值。
+            grid-gap: <grid-column-gap> <grid-row-gap>; */
+            /* grid-gap: 10px 10px; */
+            /* justify-items，沿列轴对齐（水平方向）网格项中的内容(相反于align-item属性定义的沿行轴对齐)。此值适用于容器内所
+            有的网格项 */   
+            /* start: 内容与网格区域的左端对齐，end: 内容与网格区域的右端对齐，center: 内容处于网格区域的中间位置，
+            stretch: 内容宽度占据整个网格区域空间(默认值) */
+            justify-content: start;
+            /* align-items，沿行轴对齐（竖直方向）网格项中的内容(相反于justify-item属性定义的沿列轴对齐)。此值适用于容器内所
+            有的网格项 */
+            /* 参数与justify-content的一致 */
+            /* justify-content，当网格大小小于网格容器时，网格在网格容器中水平方向的布局方式
+            start: 网格与网格容器的左端对齐，end: 网格与网格容器的右端对齐，center: 网格处于网格容器的中间
+            stretch: 调整网格项的大小，使其宽度填充整个网格容器，space-around: 在网格项之间设置偶数个空格间隙，其最边缘
+            间隙大小为中间空格间隙大小的一半
+            space-between: 在网格项之间设置偶数个空格间隙，其最边缘不存在空格间隙，space-evenly: 在网格项之间设置偶数个
+            空格间隙，同样适用于最边缘区域 */
+            /* align-content， 当网格大小小于网格容器时，网格在网格容器中的竖直方向布局方式，参数与justify-content一致*/
+        }
+        #app>div {
+            /* 网格项属性 */
+            /* grid-column-start/grid-column-end/grid-row-start/grid-row-end */
+            /* 使用特定的网格线确定网格项在网格内的位置。grid-column-start/grid-row-start 属性表示网格项的网格线的起始位置，
+            grid-column-end/grid-row-end属性表示网格项的网格线的终止位置 */
+            /* <line>: 可以是一个数字来引用相应编号的网格线，或者使用名称引用相应命名的网格线
+            span <number>: 网格项包含指定数量的网格轨道
+            span <name>: 网格项包含指定名称网格项的网格线之前的网格轨道
+            auto: 表明自动定位，自动跨度或者默认跨度之一 */
+
+            /* grid-column/grid-row，grid-column-start + grid-column-end, 和 grid-row-start + grid-row-end属性分别的简写形式 */
+            /* 参数<start-line> / <end-line>： 每一个属性均接收一个相同值，包括跨度 */
+        }
     </style>
 </head>
 <body>
-    
+    <!-- 网格容器 -->
+    <div id="app">
+        <!-- 网格项 -->
+        <div class="a"></div>
+        <div class="b"></div>
+        <div class="c"></div>
+    </div>
 </body>
 </html>
