@@ -1,108 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>块级格式化上下文</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <style type="text/css">
-            /* BFC 的元素可以看作是隔离了的独立容器，容器里面的元素不会在布局上影响到外面的元素，并且 BFC 
-            具有普通容器没有的一些特性，例如可以包含浮动元素，清除浮动的方法（如 overflow 方法）
-            就是触发了浮动元素的父元素的 BFC ，使到它可以包含浮动元素，从而防止出现高度塌陷的问题 */
 
-            /* 满足下面任一条件的元素，会触发为 BFC ：*/
-            /*  
-                根元素 
-                浮动元素，float 除 none 以外的值
-                绝对定位元素，position（absolute，fixed）
-                display 为以下其中之一的值 inline-block，table-cell，table-caption，flex
-                overflow 除了 visible 以外的值（hidden，auto，scroll）*/
-            /* 
-                BFC区域约束条件：
-                内部的Box会在垂直方向上一个接一个的放置
-                垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠，与方向无关。）
-                每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超
-                出他的包含块，而position为absolute的元素可以超出他的包含块边界）
-                BFC的区域不会与float的元素区域重叠
-                计算BFC的高度时，浮动子元素也参与计算
-                BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然 */
+<head>
+    <title>块级格式化上下文</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
 
-             /* BFC的一个最重要的效果是，让处于BFC内部的元素与外部的元素相互隔离，使内外元素的定位不会相互影响。
-                这是利用BFC清除浮动所利用的特性 */
+        .left {
+            background: #73DE80;
+            opacity: 0.5;
+            border: 3px solid #F31264;
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
 
-            .demo1 {
-                width: 300px;
-                height: 300px;
-                background: #ccc;
-            }
-            .demo1 div {
-                width: 50px;
-                height: 50px;
-                margin: 50px auto;
-                background: red;
-            }
+        .right {
+            background: #EF5BE2;
+            opacity: 0.5;
+            border: 3px solid #F31264;
+            width: 400px;
+            min-height: 100px;
+        }
 
-            .demo2 {
-                width: 300px;
-            }
-            .demo2 div {
-                background: #eee;
-                border: 1px solid blue;
+        .box {
+            background: #888;
+            height: 100%;
+            margin: 50px 100px;
+        }
 
-            }
-            .demo2 div div {
-                width: 50px;
-                height: 50px;
-                background: red;
-            }
-            .demo2 .demo2-1 div {
-                float: right;
-            }
-            .demo2 .demo2-1 {
-                overflow: hidden;
-            }
-            .demo2 .demo2-2 div {
-                float: right;
-            }
+        .little {
+            background: red;
+            width: 50px;
+            height: 50px;
+            margin: 10px;
+            float: left;
+        }
+    </style>
+</head>
 
-            .demo3 {
-                width: 300px;
-                background: #ccc;
-            }
-        </style>
-    </head>
-    <body>
-        <p>同一个BFC（块级格式化上下文）中元素下外边距会发生折叠</p>
-        <div class="demo1">
-            <p>两个div的下外边距相距50，而不是100，下外边距重叠</p>
-            <div></div>
-            <div></div>
+<body>
+    <!-- left框左浮动，脱离常规流，right占据它的位置，right与left重叠。box没有生成BFC，发生高度塌陷，left超出box -->
+    <div class="box">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <!-- 通过box设置overflow: hidden生成BFC，这样计算box高度时会包含浮动元素，解决浮动元素高度塌陷问题 -->
+    <div class="box" style="overflow: hidden; margin-top: 150px;">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+
+    <div class="box">
+        <div class="left"></div>
+        <!-- right未生成BFC，它其中的会受到left影响， -->
+        <div class="right">
+            <!-- little元素浮动生成BFC，互不影响，所以little之间不会发生外边距重叠 -->
+            <div class="little"></div>
+            <div class="little"></div>
+            <div class="little"></div>
         </div>
-        <p>BFC可以包含浮动的元素（清除浮动）</p>
-        <div class="demo2">
-            <p>清除掉浮动，容器包裹元素</p>
-            <div class="demo2-1">
-                <div>浮动元素</div>
-            </div>
-            <p>未清除浮动，元素浮动脱离文档流，父元素只剩下边框的尺寸</p>
-            <div class="demo2-2">
-                <div>浮动元素</div>
-            </div>
+    </div>
+
+    <div class="box" style="margin-top: 150px;">
+        <div class="left"></div>
+        <!-- right生成BFC，BFC会生成独立的容器，与外部元素互不影响，BFC的区域不会与float的元素区域重叠 -->
+        <div class="right" style="overflow: hidden;">
+            <div class="little"></div>
+            <div class="little"></div>
+            <div class="little"></div>
         </div>
-        <div class="demo3">
-            <p>文字环绕</p>
-            <div class="demo3-1">
-                <div style="height: 50px; width: 50px; float: left; background: red;">浮动元素</div>
-                <div>这是一个没有设置浮动，也没有触发BFC的元素.这是一个没有设置浮动，也没有触发BFC的元素.这是一
-                    个没有设置浮动，也没有触发BFC的元素.这是一个没有设置浮动，也没有触发BFC的元素</div>
-            </div>
-            <p>文字不围绕浮动元素，这个方法可以用来实现两列自适应布局，左边的宽度固定，右边的内容自适应宽度（去掉上
-                面右边内容的宽度）</p>
-            <div class="demo3-2">
-                <div style="height: 50px; width: 50px; float: left; background: red;">浮动元素</div>
-                <div style="overflow: hidden;">这是一个没有设置浮动，但是触发了BFC的元素。这是一个没有设置浮动，
-                    但是触发了BFC的元素。这是一个没有设置浮动，但是触发了BFC的元素。这是一个没有设置浮动，
-                    但是触发了BFC的元素。</div>
-            </div>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
