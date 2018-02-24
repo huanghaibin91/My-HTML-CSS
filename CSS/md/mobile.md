@@ -81,7 +81,7 @@
 - **淘宝Flexible移动端适配方案**
 
 	这个方案是通过JS动态设置HTML标签的font-size值，然后通过rem实现页面布局。同时还会改写meta标签，设置当前缩放比。
-	[flexible.js源码阅读]()	
+	[flexible.js源码阅读](https://github.com/huanghaibin91/My-HTML-CSS/blob/master/CSS/md/flexible.js)	
 
 - **`vw` 方案**
 
