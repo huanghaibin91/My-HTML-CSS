@@ -7,7 +7,7 @@
 
 **display值**
 
-![display可设置的值]()
+![display可设置的值](https://raw.githubusercontent.com/huanghaibin91/My-HTML-CSS/master/CSS/image/display.png)
 
 CSS3新值display值：
 
