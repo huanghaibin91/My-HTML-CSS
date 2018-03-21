@@ -21,6 +21,7 @@
 	- 元素定位absolute，包含块是最近的非static的祖先元素：
 		- 祖先元素是块级元素，包含块设置为该元素的内边距边界；
 		- 祖先元素是行内元素，包含块设置为该元素的内容边界；
+		
 - `margin`，外边距：
 	- margin设置为百分比时是根据元素的包含块的width来计算；
 	- 内联元素(display: inline)不能设置margin-top和margin-bottom；
@@ -33,14 +34,17 @@
 		- 对于定位relative元素， 负值还是会把下面的元素粘着一起移动，但会完全覆盖前一个元素；
 		- 对于定位absolute元素，因为元素脱离了文档流，所以负值只会自己发生偏移，对前后元素没有任何影响；
 		- 对于float元素，可以通过负值进行覆盖，最常见的应用是三栏应用；
+		
 - `padding`，内边距：
 	- padding设置为百分比时是根据元素的包含块(containing-block)的width来计算；
 	- 内联元素(display: inline)的padding生效，但是top和bottom并不会推挤，只会覆盖其他元素，覆盖情况遵循z-index原则；
 	- 不允许负值；
-- `border`，
-	- 只有px不支持百分比；
+	
+- `border`，边框：
+	- 只有px,不支持百分比；
 	- inline元素边框左右不合并，上下会合并。inline-block和block元素四个方向都不会合；
-- `width`和`height`，
+	
+- `width`和`height`：
 	- 内联元素不能设置width和height；
 	- 非内联元素设置百分比：根据包含块的content-box宽度计算，果当前元素是绝对定位，那么相对父元素的padding-box的宽度定位；
 
@@ -49,4 +53,5 @@
 可以通过定义CSS属性来改变元素的盒模型：
 
 - `display`，[display解析]()；
+
 - `box-sizing: content-box || border-box || inherit（从父元素继承）;`，IE8及其以上支持，box-sizing的值会作为width、height的计算范围，默认值为content-box；
