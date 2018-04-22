@@ -7,6 +7,7 @@
     <title>Calc</title>
     <style>
         /* 
+        IE 9+
         calc()使用通用的数学运算规则：
             使用“+”、“-”、“*” 和 “/”四则运算；
             可以使用百分比、px、em、rem等单位；
@@ -14,9 +15,22 @@
             表达式中有“+”和“-”时，其前后必须要有空格，如"widht: calc(12%+5em)"这种没有空格的写法是错误的；
             表达式中有“*”和“/”时，其前后可以没有空格，但建议留有空格
          */
+        .box {
+            width: 500px;
+            height: 500px;
+            border: 1px solid red; 
+        }
+        
+        .content {
+            width: calc(100% - 100px);
+            height: 100px;
+            background-color: #eee;
+        }
     </style>
 </head>
 <body>
-    
+    <div class="box">
+        <div class="content"></div>
+    </div>
 </body>
 </html>

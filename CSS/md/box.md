@@ -55,3 +55,14 @@
 - `display`，[display解析]()；
 
 - `box-sizing: content-box || border-box || inherit（从父元素继承）;`，IE8及其以上支持，box-sizing的值会作为width、height的计算范围，默认值为content-box；
+
+- 在不支持`box-sizing`属性的浏览器，可以使用宽度分离的方法来保证元素盒子宽度；
+
+		.container { // 设置一个包裹元素来包裹box元素，box的宽度会被container约束
+			width: 200px;
+		}
+
+		.container .box { // 不设置box宽度，不论如何改变box盒子内外边距边框宽度，box都会被container约束，保证box的宽度不变
+			padding: 10px;
+			margin: 10px;
+		}

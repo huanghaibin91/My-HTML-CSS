@@ -15,4 +15,21 @@ HTML标签知识备忘录：
 
 - HTML5中`<html>`元素新增一个属性，`manifest`属性规定文档的缓存`manifest`的位置，参数属性指向一个manifest的文件（此文件`.appcahce`后缀），这个文件指明了当前页面哪些资源需要进行离线缓存。 Manifest有大小限制，它其实也算本地存储，本地存储一般每个域有限制使用的空间，PC Chrome是5M，Manifest文件如`home.appcahce`不能跨域，如果跨域需要支持CORS。Manifest Cache的资源不能跨域，同样如果跨域该资源需要支持CORS，一般浏览器会自动处理；
 
+- `<blockquote>`元素最好包含一个块级子元素；
+
+- `<pre>`标签可定义预格式化的文本，被包围在`<pre>`标签元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。pre元素是块级元素，但是只能包含文本或行内元素。也就是说，任何块级元素（常见为可以导致段落断开的标签）都不能位于pre元素中；
+
+- `<map>`标签用于客户端图像映射，图像映射指带有可点击区域的一幅图像：
+
+		<img src="demo.png" alt="Planets" usemap="#planetmap" />
+		// map需定义name属性提供给img使用
+		<map name="planetmap">
+			<area shape="rect" coords="0,0,82,126" href="sun.htm" alt="Sun">
+			<area shape="circle" coords="90,58,3" href="mercur.htm" alt="Mercury">
+		</map>
+
+
+
+
+
 
